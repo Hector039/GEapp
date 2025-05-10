@@ -106,7 +106,7 @@ export default class UsersController {
                     code: TErrors.INVALID_TYPES,
                 });
             }
-            const avatarPath = `http://localhost:8080/${avatar.filename}`;
+            const avatarPath = process.env.CORS_ORIGIN + avatar.filename;
             await this.usersRepo.updateUserField(user.id, "avatar", avatarPath);
             res.status(200).send({ avatar: avatarPath })
         } catch (error) {

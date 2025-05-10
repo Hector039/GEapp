@@ -9,7 +9,7 @@ import { profilesImgPath } from "../public/data/pathProfiles.js";
 import usersGoalsRouter from "../routes/usersGoals.route.js";
 
 const corsOptions = {
-    origin: "https://localhost:8080",
+    origin: process.env.CORS_ORIGIN,
     credentials: true,
 };
 
